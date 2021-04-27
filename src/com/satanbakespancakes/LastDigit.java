@@ -1,19 +1,25 @@
 package com.satanbakespancakes;
 
 import java.util.Comparator;
+import java.util.List;
 
-public class LastDigit implements Comparator<Integer> {
+public class B<T> implements Comparable<List<T>> {
+
+    List<T> val;
+
+    public B(List<T> value){
+        val = value;
+    }
 
     @Override
-    public int compare(Integer o1, Integer o2) {
-        int m1 = o1 % 10;
-        int m2 = o2 % 10;
-        // и сравниваем их
-        if (m1 < m2)
-            return -1;
-        else if (m1 > m2)
-            return 1;
-        else
-            return 0;
+    public int compareTo(List<T> o) {
+        String a = "", b = "";
+        for (T i: o){
+            a+=i.toString();
+        }
+        for (T i: val){
+            b+=i.toString();
+        }
+        return a.compareTo(b);
     }
 }
