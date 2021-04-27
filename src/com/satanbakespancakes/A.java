@@ -11,6 +11,7 @@ public class A<T> implements Comparable<T> {
         val = value;
     }
 
+
     @Override
     public int compareTo(T o) {
         return val.toString().compareTo(o.toString());
